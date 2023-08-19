@@ -1,0 +1,1 @@
+scrot "/tmp/screenshot" -s -o -e 'tesseract -l jpn_vert --oem 3 --psm 5 $f - | xclip -selection clipboard -i && rm $f'
