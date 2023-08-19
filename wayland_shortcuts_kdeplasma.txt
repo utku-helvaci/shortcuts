@@ -1,1 +1,1 @@
-f=/tmp/translate.png;spectacle -ebro $f &&( tesseract -l jpn_vert --oem 3 --psm 5 $f - | wl-copy )&& rm $f
+bash -c "f=/tmp/translate.png;spectacle -enbro $f &&( tesseract -l jpn_vert --oem 3 --psm 5 $f - | wl-copy )&& rm $f"
