@@ -1,0 +1,1 @@
+whisper.cpp --model /usr/share/whisper.cpp-model-large/large.bin --translate -t 8 --language ja  -osrt -of /dev/shm/translated /dev/shm/wav.wav&whisper.cpp --model /usr/share/whisper.cpp-model-large/large.bin -t 8 --language ja  -osrt -of /dev/shm/transcribed /dev/shm/wav.wav
