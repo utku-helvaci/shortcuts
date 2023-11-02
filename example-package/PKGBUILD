@@ -1,3 +1,4 @@
+# https://itsfoss.com/create-pkgbuild/
 pkgname="COMPANY-2.4G-Device-Mouse-button2-remap-to-left-click"
 pkgver="1.0.0"
 pkgrel="1"
@@ -6,6 +7,9 @@ arch=("any")
 license=("MIT")
 source=("70-mouse-remap.hwdb")
 sha512sums=("SKIP")
+# https://bbs.archlinux.org/viewtopic.php?pid=2108808#p2108808
+install="post.install"
+depends=('systemd')
 
 package() {
   mkdir -p "${pkgdir}/etc/udev/hwdb.d"

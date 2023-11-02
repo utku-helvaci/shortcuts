@@ -1,0 +1,17 @@
+post_install() {
+systemd-hwdb update
+echo replug the mouse to have the changes
+}
+
+post_remove() {
+systemd-hwdb update
+echo replug the mouse to have the changes
+}
+
+# https://bbs.archlinux.org/viewtopic.php?pid=1904990#p1904990
+# post_reinstall ?
+
+post_upgrade() {
+systemd-hwdb update
+echo replug the mouse to have the changes
+}
