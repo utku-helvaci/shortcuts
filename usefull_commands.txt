@@ -1,1 +1,3 @@
 whisper.cpp --model /usr/share/whisper.cpp-model-large/large.bin --translate -t 8 --language ja  -osrt -of /dev/shm/translated /dev/shm/wav.wav&whisper.cpp --model /usr/share/whisper.cpp-model-large/large.bin -t 8 --language ja  -osrt -of /dev/shm/transcribed /dev/shm/wav.wav
+
+yt-dlp --embed-thumbnail --write-description --all-subs -f bestaudio -o "%(upload_date)s - %(title)s/%(title)s [%(id)s].%(ext)s" 'https://www.youtube.com/watch?v=1iyj7qMJ7Pc'
