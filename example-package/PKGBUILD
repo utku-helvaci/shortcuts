@@ -5,13 +5,17 @@ pkgrel="1"
 pkgdesc="COMPANY 2.4G Device Mouse button remapped to left click"
 arch=("any")
 license=("MIT")
-source=("70-mouse-remap.hwdb")
-sha512sums=("SKIP")
+source=(./*-mouse-remap.hwdb)
+
+# https://bbs.archlinux.org/viewtopic.php?pid=599988#p599988
+# makepkg -g >> PKGBUILD && makepkg
+# sha512sums=("SKIP")
+
 # https://bbs.archlinux.org/viewtopic.php?pid=2108808#p2108808
 install="post.install"
 depends=('systemd')
 
 package() {
   mkdir -p "${pkgdir}/etc/udev/hwdb.d"
- cp "${srcdir}/70-mouse-remap.hwdb" "${pkgdir}/etc/udev/hwdb.d"
+ cp "${srcdir}"/*-mouse-remap.hwdb "${pkgdir}/etc/udev/hwdb.d"
 }
