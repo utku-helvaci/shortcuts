@@ -3,3 +3,12 @@ whisper.cpp --model /usr/share/whisper.cpp-model-large/large.bin --translate -t 
 yt-dlp --embed-thumbnail --write-description --all-subs -f bestaudio -o "%(upload_date)s - %(title)s/%(title)s [%(id)s].%(ext)s" 'https://www.youtube.com/watch?v=1iyj7qMJ7Pc'
 
 qpdf --password= --decrypt input.pdf output.pdf
+
+sudo watch -n1 eval 'nvidia-smi -q -d temperature;sensors |grep -i tdie;echo;python /var/myimps/software/omen-fan-main/omen-fan.py i'
+
+while true;do if (( $(cat /sys/class/thermal/thermal_zone0/temp) > 105000 ));then systemctl poweroff;else sleep 2;echo f;fi;done
+
+yt-dlp --write-description --all-subs --cookies-from-browser firefox
+
+#gpgme
+sudo rm -R /var/lib/pacman/sync ; sudo pacman -Sy
