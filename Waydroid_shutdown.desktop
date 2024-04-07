@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=X-WayDroid-App;
+Comment[en_AG]=
+Comment=
+Exec=bash -c 'if ! (pkexec waydroid shell svc power shutdown && waydroid session stop);then xcowsay '\\''fail !'\\'';fi'
+GenericName[en_AG]=
+GenericName=
+Icon=waydroid
+MimeType=
+Name[en_AG]=Waydroid shutdown
+Name=Waydroid shutdown
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=\s--noclose
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
