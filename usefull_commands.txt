@@ -12,3 +12,7 @@ yt-dlp --write-description --all-subs --cookies-from-browser firefox
 
 #gpgme
 sudo rm -R /var/lib/pacman/sync ; sudo pacman -Sy
+
+route -n | grep enp7s0f3u1 |sed 's/^[^[:space:]]*[[:space:]]*//;s/[[:space:]].*//' | grep -xFv -- 0.0.0.0
+
+ffmpeg -i input.mkv -an -vn -codec:s:0 srt /dev/shm/srt.srt
