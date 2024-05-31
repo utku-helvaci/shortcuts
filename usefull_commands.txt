@@ -16,3 +16,5 @@ sudo rm -R /var/lib/pacman/sync ; sudo pacman -Sy
 route -n | grep enp7s0f3u1 |sed 's/^[^[:space:]]*[[:space:]]*//;s/[[:space:]].*//' | grep -xFv -- 0.0.0.0
 
 ffmpeg -i input.mkv -an -vn -codec:s:0 srt /dev/shm/srt.srt
+
+ffmpeg -i incompatable.mp4 -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt yuv420p /dev/shm/whatsapp.mp4
