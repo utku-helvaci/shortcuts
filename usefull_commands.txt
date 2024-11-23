@@ -24,7 +24,11 @@ ffmpeg -i incompatable.mp4 -c:v libx264 -profile:v baseline -level 3.0 -pix_fmt 
 adb shell "sh -c 'input keyevent 26 62 ;sleep 1; input keyevent X X X; am start -n com.android.settings/.TetherSettings; sleep 1;input keyevent 20 20 20 20 66'";sleep 2; adb shell input keyevent 26
 
 
-set +m;shopt -s lastpipe ;echo  "$(adb shell 'ls "/storage/0000-0000/torrents/something something-EMBER"')" | readarray -t arr;set -m;shopt -u lastpipe;for i in "${arr[@]}"; do read -n 1 -p 'a or s?' a;if [ "$a" == s ];then echo skipped;else adb pull "/storage/0000-0000/torrents/something something-EMBER/$i";fi;done
+echo  "$(adb shell 'ls "/storage/0000-0000/torrents/something something-EMBER"')";set +m;shopt -s lastpipe ;echo  "$(adb shell 'ls "/storage/0000-0000/torrents/something something-EMBER"')" | readarray -t arr;set -m;shopt -u lastpipe;for i in "${arr[@]}"; do read -n 1 -p 'a or s?' a;if [ "$a" == s ];then echo skipped;else adb pull "/storage/0000-0000/torrents/something something-EMBER/$i";fi;done
 //https://unix.stackexchange.com/a/433090/292068
 //https://unix.stackexchange.com/a/136216/292068
 //https://stackoverflow.com/a/8880633
+
+for i in *;do convert "$i" -rotate '90>' "$i";done
+//makes images vertical
+//https://stackoverflow.com/a/18466451/28447625
