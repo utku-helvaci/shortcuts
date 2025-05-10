@@ -1,0 +1,11 @@
+#!/bin/bash
+if  kscreen-doctor -o | grep -A2 Output:.*HDMI-A-1|grep connected
+then if kscreen-doctor -o | grep -A2 Output:.*eDP-1|grep enabled
+
+    then kscreen-doctor output.eDP-1.disable output.HDMI-A-1.enable
+    else kscreen-doctor output.eDP-1.enable  output.HDMI-A-1.disable
+    fi
+
+
+else xcowsay "not connected"
+fi
